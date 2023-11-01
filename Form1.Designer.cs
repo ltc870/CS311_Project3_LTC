@@ -314,9 +314,9 @@
             // 
             // richTextBoxOrderSummary
             // 
-            richTextBoxOrderSummary.Location = new Point(189, 490);
+            richTextBoxOrderSummary.Location = new Point(167, 490);
             richTextBoxOrderSummary.Name = "richTextBoxOrderSummary";
-            richTextBoxOrderSummary.Size = new Size(368, 194);
+            richTextBoxOrderSummary.Size = new Size(425, 194);
             richTextBoxOrderSummary.TabIndex = 4;
             richTextBoxOrderSummary.Text = "";
             // 

@@ -15,7 +15,12 @@ namespace CS311_Project3_LTC
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            richTextBoxOrderSummary.Text = "Hello world";
+            chooseCrustType();
+
+            string orderStatement = $"You ordered a {pizzaSize} pizza with {crustType} crust and the following toppings:";
+
+            richTextBoxOrderSummary.SelectedText = orderStatement + "\n";
+
             richTextBoxOrderSummary.SelectionBullet = true;
             chooseIngredient();
             richTextBoxOrderSummary.SelectionBullet = false;
