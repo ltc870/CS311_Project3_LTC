@@ -15,6 +15,12 @@ namespace CS311_Project3_LTC
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            Summarize();
+        }
+
+
+        private void Summarize()
+        {
             chooseCrustType();
 
             string orderStatement = $"You ordered a {pizzaSize} pizza with {crustType} crust and the following toppings:";
@@ -24,7 +30,16 @@ namespace CS311_Project3_LTC
             richTextBoxOrderSummary.SelectionBullet = true;
             chooseIngredient();
             richTextBoxOrderSummary.SelectionBullet = false;
+
+            double subtotal = subTotal;
+            double taxTotal = tax * subtotal;
+            double total = subtotal + taxTotal;
+
+            txtBoxSubTotal.Text = subtotal.ToString("c");
+            txtBoxTax.Text = taxTotal.ToString("c");
+            txtBoxTotal.Text = total.ToString("c");
         }
+
 
         private void cboBoxSizes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,8 +69,10 @@ namespace CS311_Project3_LTC
             }
         }
 
+
         private void chooseCrustType()
         {
+
             if (rdoBtnThin.Checked)
             {
                 crustType = "Thin";
@@ -70,11 +87,6 @@ namespace CS311_Project3_LTC
             }
         }
 
-        private double calculateTax()
-        {
-            double totalTax = subTotal * tax;
-            return totalTax;
-        }
 
         private void chooseIngredient()
         {
@@ -102,6 +114,37 @@ namespace CS311_Project3_LTC
                     subTotal += pair.Value;
                 }
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            result = MessageBox.Show("Clear all fields", "Clear Fields", buttons);
+
+            if (result == System.Windows.Forms.DialogResult.OK)
+            {
+                pizzaSize = "";
+                subTotal = 0;
+                crustType = "";
+
+                foreach (Control control in this.Controls)
+                {
+                    if (control is CheckBox checkBox)
+                    {
+                        checkBox.Checked = false;
+                    }
+                }
+
+                richTextBoxOrderSummary.Clear();
+
+                txtBoxSubTotal.Clear();
+                txtBoxTax.Clear();
+                txtBoxTotal.Clear();
+            }
+
+
         }
     }
 }

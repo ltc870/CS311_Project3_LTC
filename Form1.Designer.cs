@@ -60,6 +60,7 @@
             txtBoxTax = new TextBox();
             txtBoxTotal = new TextBox();
             btnCalculate = new Button();
+            btnClear = new Button();
             ((System.ComponentModel.ISupportInitialize)picBoxLogo).BeginInit();
             grpBoxOrderOptions.SuspendLayout();
             grpBoxCrustType.SuspendLayout();
@@ -349,6 +350,7 @@
             // 
             // txtBoxSubTotal
             // 
+            txtBoxSubTotal.AllowDrop = true;
             txtBoxSubTotal.Location = new Point(685, 493);
             txtBoxSubTotal.Name = "txtBoxSubTotal";
             txtBoxSubTotal.Size = new Size(200, 31);
@@ -378,11 +380,22 @@
             btnCalculate.UseVisualStyleBackColor = true;
             btnCalculate.Click += btnCalculate_Click;
             // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(293, 707);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(125, 59);
+            btnClear.TabIndex = 12;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
             // formOrderForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(939, 815);
+            Controls.Add(btnClear);
             Controls.Add(btnCalculate);
             Controls.Add(txtBoxTotal);
             Controls.Add(txtBoxTax);
@@ -439,5 +452,6 @@
         private TextBox txtBoxTax;
         private TextBox txtBoxTotal;
         private Button btnCalculate;
+        private Button btnClear;
     }
 }
