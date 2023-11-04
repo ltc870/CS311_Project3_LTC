@@ -72,6 +72,7 @@ namespace CS311_Project3_LTC
 
         private void chooseCrustType()
         {
+            crustType = "";
 
             if (rdoBtnThin.Checked)
             {
@@ -129,22 +130,11 @@ namespace CS311_Project3_LTC
                 subTotal = 0;
                 crustType = "";
 
-                foreach (Control control in this.Controls)
-                {
-                    if (control is CheckBox checkBox)
-                    {
-                        checkBox.Checked = false;
-                    }
-                }
-
                 richTextBoxOrderSummary.Clear();
-
                 txtBoxSubTotal.Clear();
                 txtBoxTax.Clear();
                 txtBoxTotal.Clear();
             }
-
-
         }
     }
 }
