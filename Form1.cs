@@ -8,17 +8,19 @@ namespace CS311_Project3_LTC
         private string crustType = "";
         private string pizzaSize = "";
 
+        // empty-argument constructor
         public formOrderForm()
         {
             InitializeComponent();
         }
 
+        // Calculate button that calls the Summarize method.
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             Summarize();
         }
 
-
+        // Summarize method that calculates the subtotal, tax, and total, and displays the order summary.
         private void Summarize()
         {
             chooseCrustType();
@@ -41,6 +43,7 @@ namespace CS311_Project3_LTC
         }
 
 
+        // Event handler that allows user to select a pizza size.
         private void cboBoxSizes_SelectedIndexChanged(object sender, EventArgs e)
         {
             String data = cboBoxSizes.GetItemText(cboBoxSizes.SelectedItem);
@@ -69,7 +72,7 @@ namespace CS311_Project3_LTC
             }
         }
 
-
+        // Event handler that allows user to select a crust type with radio buttons.
         private void chooseCrustType()
         {
             crustType = "";
@@ -88,7 +91,7 @@ namespace CS311_Project3_LTC
             }
         }
 
-
+        // chooseIngredient method that allows user to select ingredients with check boxes.
         private void chooseIngredient()
         {
             Dictionary<CheckBox, double> ingredientPrices = new Dictionary<CheckBox, double>
@@ -117,6 +120,7 @@ namespace CS311_Project3_LTC
             }
         }
 
+        // btnClear_Click event handler that clears all fields.
         private void btnClear_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.OK;
