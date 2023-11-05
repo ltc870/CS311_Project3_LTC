@@ -133,6 +133,22 @@ namespace CS311_Project3_LTC
                 pizzaSize = "";
                 subTotal = 0;
                 crustType = "";
+                chkBoxPepperoni.Checked = false;
+                chkBoxSausage.Checked = false;
+                chkBoxCanadianBacon.Checked = false;
+                chkBoxSpicyItalian.Checked = false;
+                chkBoxOnion.Checked = false;
+                chkBoxGreenPepper.Checked = false;
+                chkBoxBlackOlives.Checked = false;
+                chkBoxGreenOlives.Checked = false;
+                chkBoxBananaPeppers.Checked = false;
+                chkBoxJalepeno.Checked = false;
+                chkBoxExtraCheese.Checked = false;
+                chkBoxMushroom.Checked = false;
+                rdoBtnThin.Checked = false;
+                rdoBtnRegular.Checked = false;
+                rdoBtnThick.Checked = false;
+                cboBoxSizes.SelectedIndex = -1;
 
                 richTextBoxOrderSummary.Clear();
                 txtBoxSubTotal.Clear();
