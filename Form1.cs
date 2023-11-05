@@ -17,7 +17,18 @@ namespace CS311_Project3_LTC
         // Calculate button that calls the Summarize method.
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            Summarize();
+            if (cboBoxSizes.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a pizza size");
+            }
+            else if (rdoBtnThin.Checked == false && rdoBtnRegular.Checked == false && rdoBtnThick.Checked == false)
+            {
+                MessageBox.Show("Please select a crust type");
+            }
+            else
+            {
+                Summarize();
+            }
         }
 
         // Summarize method that calculates the subtotal, tax, and total, and displays the order summary.
